@@ -1,0 +1,28 @@
+<%- include('partials/header'); -%>
+    <h1>Home</h1>
+    <p><%= startingContent %></p>
+
+    <!-- <div class="post-container"> -->
+    <% postsContent.forEach(function(post){ %>
+        <div>
+            <!-- class="post-card" -->
+            <h1><%= post.title %></h1> 
+            <p>
+                <%= post.content.substring(0, 150) + " ..." %>
+                <a href="/posts/<%=post._id%>">Read More</a>
+            </p> 
+            <!-- <div class="post-card-title">
+                <h1><%= post.title %></h1>  
+            </div>
+            <div class="post-card-content" >
+                <p>
+                    <%= post.content.substring(0, 150) + " ..." %>
+                    <a href="/posts/<%=post._id%>">Read More</a>
+                </p> 
+            </div> -->
+        </div>
+    <% }); %>
+    <!-- </div> -->
+
+<%- include('partials/footer'); -%>
+
